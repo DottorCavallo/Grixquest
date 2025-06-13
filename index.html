@@ -1,174 +1,586 @@
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avventure di un Goblin</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Oooh Baby', cursive;
-      background-color: #1c1c1c;
-      /* Sfondo scuro */
-      margin: 0;
-      padding: 0;
-      color: #f5f5f5;
-    }
-
-    .quest-container {
-     position: fixed; /* O absolute, se preferisci */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 480px;
-  margin-top: 0;
-  margin-right: 0;
-  padding: 20px;
-  height: 600px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 3px double #0e1209;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-  overflow: auto;
-    }
-
-    .quest-title {
-      font-size: 38px;
-      text-shadow: 0px 3px 3px rgba(0, 255, 0, 0.5);
-      letter-spacing: 7px;
-      color: #99db8f;
-      margin-top: 3px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .quest-title img {
-      width: 100px;
-      height: 100px;
-      margin-right: 15px;
-    }
-
-    .quest-item {
-      margin-bottom: 20px;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
-    }
-
-    .quest-item-title {
-      font-size: 23px;
-      text-align: center;
-      letter-spacing: 4px;
-      color: #0e1209;
-      margin-bottom: 25px;
-      background-color: #99db8f;
-      padding: 9px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 255, 0, 0.5);
-      animation: blink 1.5s infinite alternate;
-    }
-
-    @keyframes blink {
-      0% {
-        background-color: #99db8f;
-        color: #0e1209;
-      }
-
-      100% {
-        background-color: rgba(0, 255, 0, 0.6);
-        color: #ffffff;
-      }
-    }
-
-    .quest-phases {
-      font-size: 18px;
-      margin-top: 15px;
-      color: #f5f5f5;
-    }
-
-    .quest-phase {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 8px;
-    }
-
-    .quest-phase::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 18px;
-      color: #99db8f;
-    }
-
-    .quest-footer {
-      font-size: 14px;
-      color: #99db8f;
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    .quest-container::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    .quest-container::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .quest-container::-webkit-scrollbar-thumb {
-      background-color: #99db8f;
-      border-radius: 10px;
-      border: 3px solid #1c1c1c;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="quest-container">
-    <div class="quest-title">
-      <img src="https://cdna.artstation.com/p/assets/images/images/032/745/822/original/javier-goblin-pixel-art3.gif?1607357222" alt="Goblin Icon">
-      Avventure di un goblin
+<div style="background-color: #080808; width: 850px; padding: 10px 30px 10px 30px; color: #555; font-family: calibri; font-size: 11px; text-align: justify; line-height: 13px; border: 15px solid #090909; scrollbar-color: #444 #222">
+    <div style="font-family: 'Staatliches'; font-size: 60px; color: #222; text-align: center; border-bottom: 1px solid #111; line-height: 201px; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; text-shadow: 2px 0 2px #000">Cronache</div>
+    
+<!-- quest successiva -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Il Cerchio blu cerca Informazioni
+        </div>
     </div>
-    <div class="quest-item">
-      <div class="quest-item-title">Il Rito</div>
-      <div class="quest-phases">
-        <div class="quest-phase"> Lo spettromanto</div>
-      </div>
-      <div class="quest-footer">
-        22 Ottobre 2024  <br> Master: Malias_Grakas
-      </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Dayel | Dalsida | 31° di Seithen - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center"> Nella locanda di Dalsida, Holer e l'uomo stecco cercano informazioni, accolti però da un Grixardo che li sfida. L'uomo stesso, forte dei suoi poteri mentali cerca di forzare la mente del goblin al quale viene in aiuto lo spirito che lo possiede. Shasha intanto, per sfuggire dai pericoli della sala, viene condotta nelle cucine da un garzone per aiutare il cuoco che si è tagliato per via di uno scherzo mal riuscito.
+La situazione si fa critica per Holer e il suo Secondo, approfitteranno di uno strano oggetto per sfuggire, lasciando gli ospiti della locanda addormentati sui tavoli. Tutti, meno Grixardo ancora posseduto, Shasha e il cuoco, ancora nelle cucine.</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/415dcbcc-aa37-4512-80ac-5cb7c1933d04/dfz1f1c-fc079103-9bbc-4cff-942c-1027d4ee1a5b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQxNWRjYmNjLWFhMzctNDUxMi04MGFjLTVjYjdjMTkzM2QwNFwvZGZ6MWYxYy1mYzA3OTEwMy05YmJjLTRjZmYtOTQyYy0xMDI3ZDRlZTFhNWIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.5PjSvp-cvGR_3SoaxXc93w9mmggm3QPhDfQBgi0_m6U">
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <div class="quest-item">
-      <div class="quest-item-title">Risolvi l'Enigma</div>
-      <div class="quest-phases">
-        <div class="quest-phase"> Nuovi Indizi e Scontri Violenti</div>
-        <div class="quest-phase">Ultima Puntata </div>
-      </div>
-      <div class="quest-footer">
-        Inizio Data: 7 Ottobre 2024 | Fine Data: 21 Ottobre 2024 <br> Master: Artemidia e Raisha_Larkhill
-      </div>
+    <!-- quest 1 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            L'ATTACCO DEI SAURI
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Nimloth | Valle di Pietra | 16° di Seiten - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/687ebdfd-1b32-4114-9d62-7167321a8765/d93uadk-7ff9f1c6-6cfa-4068-a269-66a5b666cd16.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY4N2ViZGZkLTFiMzItNDExNC05ZDYyLTcxNjczMjFhODc2NVwvZDkzdWFkay03ZmY5ZjFjNi02Y2ZhLTQwNjgtYTI2OS02NmE1YjY2NmNkMTYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.qbYi58CdyTx2ON8M1DfUlwoMYFo4vLC-DxjYb3-kaXg">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Al calare della notte, le truppe di Dalsida avanzano nel canyon verso l’ingresso della città sotterranea. Il gruppo è composto da 60 militi, i Sette di Dalsida e i loro alleati. L’atmosfera è tesa e silenziosa, ma l’ordine viene mantenuto.
+
+Poco prima dello slargo, un’imboscata ha luogo: i Sauri attaccano dall’alto calandosi lungo le pareti con armi rudimentali ma efficaci. I militi reagiscono con prontezza, nonostante la sorpresa.
+
+Lirael combatte con freddezza in sella a Spettromanto, guidando una rapida controffensiva e abbattendo diversi assalitori prima che raggiungano le retrovie.
+Elrien si distingue nel contenere il panico tra i soldati, proteggendo i feriti e mantenendo la coesione del gruppo mentre i nemici avanzano.
+
+Durante lo scontro, Grixardo e cinque militi cadono in una botola nascosta, insieme a un Sauro. Si ritrovano in un’antica cavità sotterranea, dove scoprono la presenza di un gruppo di goblin fuggiaschi. Questi offrono una via di fuga. Grixardo accetta e, con l’aiuto di un rampino, risale con i suoi uomini.
+
+Nel frattempo, Melia cade da cavallo a causa di una freccia che colpisce il destriero. Dazar la raggiunge, ma entrambi vengono catturati da un'altra trappola e si ritrovano nel sottosuolo, vicini a Grixardo.
+
+In superficie, la battaglia continua. Lykaios respinge un nemico con il suo bastone, mentre Astreo riesce a contrastare l’attacco di un Sauro ma resta brevemente disorientato da una visione. I ranghi reggono, anche se alcuni alleati iniziano a subire ferite e le linee si indeboliscono.
+
+Improvvisamente risuonano tre corni. I Sauri, colti dal panico, sembrano disorientati. La battaglia è ancora in corso, ma l’equilibrio comincia a incrinarsi.
+
+Pochi istanti dopo, un tremore scuote la terra. La città sotterranea esplode dall’interno, sollevando polvere e detriti. Il terreno cede in più punti e una vasta parte del sottosuolo implode su sé stessa, lasciando dietro solo macerie e un cratere fumante.</div>
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <div class="quest-item">
-      <div class="quest-item-title">La Ricerca di Materiali</div>
-      <div class="quest-phases">
-        <div class="quest-phase">Distruzione del Monolito</div>
-       
-      </div>
-      <div class="quest-footer">
-        8 Ottobre 2024  <br> Master: Malias_Grakas
-      </div>
+ <!-- quest 2 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Gli ultimi racconti d'una Goblin e l'Interrogatorio
+        </div>
     </div>
-  </div>
-</body>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Isen | Valle di Pietra | 15° di Giblean - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">All’interno dell’accampamento, due interrogatori si svolgono in contemporanea ma in ambienti distinti. Grixardo e Rokrin, appartati attorno a un falò da campo, raccolgono le ultime parole di Chiriss, un’anziana goblin della tribù delle Aquile, sopravvissuta alla prigionia insieme ad altri sei compagni. Gravemente debilitata, Chiriss racconta tra colpi di tosse e fiotti di sangue delle condizioni disumane in cui venivano tenuti e del misterioso scavo in corso. Con gesto estremo e mani tremanti, disegna sul terreno una grezza mappa della planimetria del luogo, tracciata col sangue che le sfugge dalla bocca poco prima di spirare.
 
-</html>
+Contemporaneamente, all'interno di una tenda militare sorvegliata da due miliziani, il Pontefice e la Regina interrogano un sauro prigioniero, tenuto rinchiuso in una botte. Sotto pressione, la creatura rivela che una figura chiamata Thesis – una regina – è la mente dietro la cattura dei goblin. Afferma che i goblin vengono ridotti in schiavitù e utilizzati sia come forza lavoro che come cibo per la loro razza.</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://i.pinimg.com/1200x/98/58/31/9858312c09b25697f795f76bc1a47ea1.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- quest 3 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            E la Valle si tinse di rosso
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Isen | Valle di Pietra | 26° di Mart - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3bab014f-d790-4584-95ea-45517823aebc/dfscspo-818574dd-b4bb-4259-a1ea-66fbc4cbcdd4.jpg/v1/fill/w_1280,h_768,q_75,strp/mars_by_inanis_obscurum_dfscspo-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzY4IiwicGF0aCI6IlwvZlwvM2JhYjAxNGYtZDc5MC00NTg0LTk1ZWEtNDU1MTc4MjNhZWJjXC9kZnNjc3BvLTgxODU3NGRkLWI0YmItNDI1OS1hMWVhLTY2ZmJjNGNiY2RkNC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.579vduZIati-abcnnYj3IeFBKUa8grqXU9JTFWmTQrw">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Durante il viaggio verso il sito minerario, la compagnia — Grixardo, Rokrin, Leif, Astreo e Lirael — attraversa un canyon sotto un cielo stellato. Fin dai primi momenti, anomalie geografiche sollevano sospetti: la mappa non corrisponde al paesaggio attuale. Leif appare debilitato dalla febbre, e un senso di inquietudine serpeggia nell’aria.
+
+Addentrandosi nella valle, la situazione degenera. Il terreno emana odore di muffa, strano per una zona arida. Lirael scopre tracce fresche e fori nel suolo simili ad alloggiamenti da costruzione. Il cavallo di Astreo urta un oggetto metallico sepolto sotto la polvere: il suono rimbomba tra le rocce. Poco dopo, emergono binari da miniera e strane strutture artigianali, mentre Leif intravede occhi tra le ombre.
+
+Un frangente critico si manifesta con una frana improvvisa: massi si staccano dall'alto, mettendo in pericolo il carro e l’intera compagnia. Rokrin si rifugia tra i massi e trova una pelle in muta appartenente a un rettile umanoide, accanto a un ciondolo misterioso. Grixardo identifica un simbolo inciso sulle rotaie — un serpente che ingoia una spada — e ne riconosce l’origine, pur senza tempo per approfondire.
+
+Lirael, con una manovra disperata, riesce a trasmutare il masso in sabbia prima dell’impatto, salvando tutti. Nonostante lo scampato pericolo, resta un clima di sospetto: qualcuno — o qualcosa — sta seguendo i loro movimenti. Le installazioni sono troppo ben realizzate per essere improvvisate. La compagnia fa ritorno all’accampamento, consapevole che la valle cela più domande che risposte.</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- quest 4 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Evento di Dalsida: Il Corteo dei Silenti
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Wizenman | Dalsida | 21° di Gerran - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Il corteo avanza verso la piazza, immerso in un'atmosfera euforica alimentata dal ritmo incalzante dei tamburi. Lirael, sotto la sua maschera, riceve offerte muovendosi tra un balzo e l'altro. Con una falcata più ampia, cerca di superare la barriera che separa il corteo dal pubblico. Lucien, distratto e disinteressato, non si accorge del furto mentre osserva la folla in cerca della ragazza con il ciondolo a forma di corvo. Deluso dalla sua assenza, si allontana senza rendersi conto della perdita delle sue monete, almeno fino a che non andrà via.
+Nel frattempo, Grixardo riesce a rubare con destrezza le cinquanta monete dalle tasche di Lucien, scivolando tra la folla senza essere notato. Dopo aver verificato il bottino con un gesto rapido, si dirige verso uno dei raccoglitori di offerte per sbarazzarsi della borsa e confondersi ancora una volta tra le ombre. Raisha, completamente immersa nella sua danza, diventa una figura primordiale, affascinando la folla con la sua potenza e grazia, trascinata dall'istinto selvaggio che guida ogni suo movimento. Il tutto mentre la Regina dalla sua portantina saluta i fedeli e non solo. Mentre il corteo prosegue in un crescendo di emozioni e di sguardi rapiti.</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://t4.ftcdn.net/jpg/07/56/52/09/360_F_756520986_Qfn0dJVkWDax3t3V2AevA4BWzYhFgSpk.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- quest 5 -->
+   <!-- quest 1 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Giochi di Audacia - La mela nera del Destino
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Wizenman | Dalsida | 19° di Gerran - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://m.media-amazon.com/images/S/pv-target-images/8a081ac4237331c8c1456e07c8b062cf1a3ebe165390ed20ccdd249b23f1b4ed.jpg">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Nel torneo di tiro con l’arco, la tensione era palpabile mentre i partecipanti scagliavano le loro frecce verso la mela posta come bersaglio. Leif, con una tecnica impeccabile e una concentrazione assoluta, ha colpito in pieno il centro della mela, facendola quasi esplodere in due perfette metà. Il goblin Grixardo, con la sua balestra, ha piazzato il dardo poco sotto quello di Leif, sfiorando la perfezione. Lysabel, nonostante la sua grande precisione, ha colpito solo il lato della mela, mancando di poco il centro. Zadan, invece, con un errore clamoroso, ha mancato il bersaglio e ha conficcato la sua freccia nella spalla di una donna tra il pubblico, scatenando caos e sconcerto tra i presenti.
+
+Alla fine, i giudici hanno decretato il podio:
+Leif - 500 monete d’oro per il tiro perfetto.
+Grixardo - 300 monete d’oro per il secondo miglior colpo.
+Lysabel - 100 monete d’oro per aver comunque centrato la mela, seppur lateralmente.
+
+Mentre i vincitori ricevevano i premi, l’attenzione si è spostata sul ferito.</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- quest 6 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Per la morte e per l’amore - Le nozze Reali di Dalsida
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Malias_Grakas | Dalsida | 18° di Giblean - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Il grande giorno è giunto, il matrimonio di sangue e cenere di Lirael e Nefti si consuma tra sacrifici, pianti, lamenti, ma anche nuove promesse. Tutto l'Aengard è stato inviato e dentro il tempio di Shanaas in più influenti uomini, donne, elfi ed elfe dell'Aengard si sono riunite per dare il loro personale augurio di buona vita a coloro che venerano la morte. Il rito si presenta subito molto diverso. Nessun abito pomposo o fiori al passaggio della sposa. I cultisti infatti raggiungono l'altare abbigliati con maschere e tuniche, piume e ossa e fanno la richiesta di benedizione e le loro promesse rilasciando i loro oggetti più personali dentro un urna. Il triplice guarda con favore quel gesto e il successivo immergersi nelle acque insanguinate dai sacrifici e il rinascere come marito e moglie, ma anche come regina e consorte di Dalsida. Tutti hanno potuto vedere ciò che Nefti e Lirael possono fare e il loro credo è più forte che mai. Sorge un regno votato alla morte, una teocrazia che ha una regina Nefti e un pontefice, Lirael</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://cdna.artstation.com/p/assets/images/images/050/601/748/large/petar-milivojevic-7ee447e1-d585-4e3a-9dee-904680905d00-petarmilivojevic-httpss-mj-runff6p3y-inside-gothic-ruined-cathedral-with-red-sand-floor-emmanuel-lubezki-cinematograp.jpg?1655233221">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+   <!-- quest 7 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+           Vincoli di sangue e legami infranti
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Isen | Dalsida | 12° di Gerran - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://c4.wallpaperflare.com/wallpaper/542/984/931/raven-animals-birds-scythe-wallpaper-preview.jpg">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Sul far della sera, mastro Grixardo, un goblin posseduto dall’essenza di Morgu, un goblin di un’epoca antica, si recherà nel sito di costruzione, ove dovrà sorgere la villa della regina Nefti, nelle lande di Dalsida. Prima di accedere alla serra semi interrata, richiama lo spirito del Carpentiere Onacona. Prima di adempiere all’atto di liberazione dell’anima, stringerà un patto di sangue facendo giurare Onacona sullo Spirito dei Tre sciacalli, che per la religione del tempo, altri non è che il Triplice, Shanaas.
+
+Adempiuto il mistico vincolo di sangue, il goblin entra nella serra, troverà la statua di marmo nero, di uno dei dodici araldi, quello a cui è legato Onacona. Verserà il suo sangue e con esso, disegnerà occhi e bocca. Compiuto l’atto, il legame viene reciso dallo sciamano, andando così a liberare lo spirito.
+
+In cambio però, l’anima di Onacona manderà un aiuto speciale al Goblin, sottoforma d’un corvo che da quella sera, lo seguirà ovunque esso vada.</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 8 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Rivelazioni di un carpentiere e della bambina fantasma
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Isen | Dalsida | 29° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Finalmente rientrato nel suo tendone, Mastro Grixardo, speranzoso di trovar pace, si stava concedendo un frugale pasto, quando viene colto da rumori metallici, prodotti da un martello che batte da solo su d'un incudine. Seguirà una tetra voce che risuona nel tendone, la voce dello spettro che infestava ormai da giorni, quel suo luogo di lavoro!
+<br>
+Sentirà delle voci chiamarlo da fuori, dove Melia, un'elfa della notte, sta cercando proprio il Mastro Ingegnere! Lo spettro invita Grixardo a farla entrare ma, in attesa che la porta gli venisse aperta, viene attratta da una canzone.
+<br><br>
+Cantano i corvi sulla città, la terra nel silenzio della morte resterà, finche’ i dodici araldi della fame, alla loro tavola dovranno tornare.
+<br><br>
+Comparirà davanti a Melia, un fantasma di bambina, in cerca di aiuto per suo padre, uno dei 12 araldi della fame, antichi profeti del Triplice, che vegliavano su Dalsida, secoli fa. Il fantasma rivelerà all'elfa, come poterli aiutare: ridare loro un aspetto che gli era stato tolto. Melia si offre di versare il sangue che servirà, non volendo però uccidere nessuno per questo. Basteranno solo 3 gocce, per ogni statua, dal sangue versato volutamente, non estorto.
+<br>
+Rassicurata, la fanciulla spettro, gli rivela che gli servirà anche la sua voce. Dovrà piantare il Seme della Terra Nera,nel giardino che dovrà sorgere, dopo l'incoronazione della futura regina. Dovrà usare quel canto che ora conoscerà, per far germogliare il Seme.
+<br>
+Ma non è la sola, ad aver visto la bambina fantasma. Anche Grixardo, assieme allo spirito del Carpentiere Goblin, che si manifesterà a lui, proprio all'uscita della sua tenda, riuscirà a vedere l'anima della fanciulla.
+<br>
+Il carpentiere propone al Mastro di impiegare le sue arti di scultore, per scolpire i volti dei 12, gli spiegherà che dovrà usare un argento per ricavare degli occhi, partendo dal metallo, impiegato dai dodici, che abbia conosciuto loro bocca. Tutto pare facile se non al momento delle trattative, lo spirito che alberga nel Goblin non abbia preso il controllo del Mastro, facendolo allontanare, avendo smosso l'interesse del terribile Gri-Tulh Morvash. Ora tutto è nelle mani di Melia, custode del Seme e di come compiere il sacrificio di sangue necessario, sapendo dove dovranno esser collocate le statue dei 12: intorno all'altare del Tempio di Shannas.
+<br><br>
+La canzone che Ricorderà Melia
+<br><br>
+"Dalla nera terra sorgerà,
+una rosa nera per beltà.
+Eterna lei sarà e mai appassirà,
+neri fiori torneranno a sbocciar,
+la cui linfa sangue sarà.
+Rose ed ossa ,
+l’altare ed il tempio adorneranno,
+e per sempre in eterno saranno."</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://i.pinimg.com/236x/f3/be/55/f3be550f2e055f044f302bc5c119a9f0.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+   <!-- quest 9 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+           La scelta del triplice
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Malias_Grakas | Dalsida | 28° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdb5sJV9OZP4xglsUUFop248ijALTv9hIoQCOFM2-DjdC6hLp0aHvTtpoucbNoWJugqLE&usqp=CAU">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Shannas ha deciso di mettere alla prova coloro che si fregiano del titolo di suoi fedeli, di suoi devoti. Dopo aver trattenuto per una notte e un giorno Nefti in quello che era un limbo tra la vita e la morte, ha guardato ciò che succedeva attorno a lei. Ha visto Lirael pregare, sacrificare, battezzare e combattere per lei. Ha visto Neevhe nuova devota della sua chiesa e guerriera senza paura in cerca della sua signora. Ha visto Ilsar non demordere davanti alla fame e trovare le soluzioni più alternative per non arrendersi, seppur rischiose per la sua stessa vita. Ha visto Melia, ignara del passato, ignara dell’identità della regina e confusa sul perché di quelle prove così cruente, ma anche lei pronta a morire per Nefti, pronta a tutto tanto da invocarla più volte. Ha visto Lykaios con il suo carisma innato che ha superato la paura e guidato le folle che non si sono lasciate andare al panico, ha visto Grixardo colto, organizzato, dissacrante, ma comunque pronto a tutto per salvare il popolo di Dalsida. Non un suo fedele, ma di certo un leale cittadino di una città che sta nascendo. Infine ha visto e sentito le risposte di Nefti alle sue tre domande. Due volte deluso, due volte abbandonato. Il triplice ha scelto adesso un terzo componente del suo regno. Le ha concesso per un istante di esser guardato ed ha donato alla Drakal la corona. Una nuova regina è giunta ed è stata acclamata dal Dio e dagli uomini.</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 10 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+            Da Mastro Borven
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Nimloth | Dalsida | 28° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">
+Grixardo si presenta nella fucina di Borven per discutere del Tridente di Selkara, il potente artefatto che Borven gli aveva chiesto di recuperare in cambio di insegnamenti sulla forgiatura. Spiega di aver mandato una sirena fidata a indagare, ma la sua alleata non è più tornata, lasciandolo frustrato e preoccupato.
+
+Nel tentativo di ottenere più supporto da Borven e accelerare il proprio apprendimento, Grixardo usa toni sfrontati e minacciosi, mostrando l’effige dei Cultisti e menzionando la Magister goblin della corporazione per intimorire il fabbro. Tuttavia, Borven non si lascia sopraffare, evidenziando la differenza tra la disciplina della Magister e l'arroganza del goblin. Inoltre, Borven ricorda a Grixardo che il taccuino e la sua disponibilità iniziale non erano gratuiti, ma erano basati sulla promessa di recuperare il tridente, una parola che il goblin non ha mantenuto. Di conseguenza, richiede un pagamento di 5000 monete se Grixardo vuole ancora ricevere il suo insegnamento.
+
+Quando Grixardo, visibilmente nervoso, restituisce il taccuino, Borven lo ignora e dichiara che non lo accoglierà più nella fucina finché non dimostrerà rispetto, umiltà e serietà. L’incontro termina con Borven che si dedica al lavoro, frustrato dall’atteggiamento del goblin e dall’intera situazione.
+</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://img.freepik.com/premium-photo/blacksmith-working-firey-forge_888204-422.jpg?w=360">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 11 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+           La serra sepolta
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Malias_Grakas | Dalsida | 27° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://img.freepik.com/foto-premium/cimitero-da-incubo-di-notte-con-pietre-tombali-spettrali-e-sfondo-dark-fantasy-adatto_817921-4690.jpg">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Sono giorni che il gruppo dei cultisti si trova riunito in un appezzamento di terreno che all’apparenza in modo del tutto casuale e’ stato scelto da Elrien nella sua forma di Nefti per costruire la sua casa.
+
+Già dai primi rilievi vi è stato qualcosa di molto strano. Una serra che cozza con gli edifici della zona e che permea ars di fortissima entità e’ stata ritrovata per caso dal goblin Grixardo insieme ad una lapide con incisa una corona.
+
+Elrien, Lirael e Neehve decidono di tornare per capirci di più, la serra infatti ha tutto il perimetro esterno contrassegnato da un cerchio di rune e da una frase in lingua nera.
+
+Il Sangue da e il sangue toglie.
+
+Lirael si prepara a donare il suo, ma non una goccia di sangue esce dal suo corpo seppur inciso.
+
+La porta si apre per tutti e tre i cultisti ma in modo diverso.
+
+Il triplice in forme differenti chiede loro di entrare e di eseguire un atto di fede.
+
+Neevhe nota la manina di un bambino che la invita a raggiungerlo. Lirael vede un uomo adulto di spalle e quel corpo poi muta e ci rivede Leeharie e Vortchan e infine uno scheletro chiede a Elrien di essere seguito.
+
+Si trovano in un lungo corridoio con dodici statue vandalizzate nelle fattezze e sfregiate nei nomi e alla fine del corridoio le loro strade si dividono.
+
+Neevhe subisce la fame come se non si nutrisse da dodici giorni, un giorno per statua. Lirael deve scegliere se liberarsi una volta per tutte da un patto che è stato infranto dalla fu Drakal o cercarla ancora per mentente la parola data. Nefti vede uno strapiombo e la città di Dalsida rigogliosa oltre quel baratro.
+
+La terra trema e le scelte vengono fatte.
+Nefti si lascia cadere nel vuoto confidando della volontà di Shannas. Lirael decide di uccidere quella visione e liberarsi da una falsa regina che fu portata da un falso pontefice e a lui verrà detto che la scelta di chi guiderà la città e’ prossima, ma sarà necessario non poi il volere di uno, ma in volere di un intero popolo che venera la morte. Neevhe si affida alla volontà di Shannas per la prima volta e non interviene vedendo Nefti cadere nel vuoto.
+
+Il sangue inizia a sgorgare come un fiume in piena, Lirael e Neehve riusciranno ad uscire dalla serra che sarà totalmente illuminata di color vermiglio. La porta da cui si è lanciata Nefti viene bloccata da un crollo e la drakal si trova adesso a galleggiare nel sangue.
+
+Il tempo è giunto.
+
+Sorgerà un regno con una nuova regina o con lei morirà per sempre la volontà di Shannas di riavere la sua casa?
+</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 12 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+          La filastrocca dei corvi e dei fantasmi
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Isen | Dalsida | 23° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">
+Una serata come le altre per Ilsar e Neehve alla Taverna, se non quando ascoltando la conversazione di due manovali, scoprono che hanno trovato una cassa, ritrovata in una fossa dopo uno scavo, successivamente crollato.
+
+Vicino alla cassa, aperta Neehve ha rinvenuto un fazzoletto con sopra una S ricamata. Mentre chiedeva ai due costruttori se vi erano feriti, toccando la cifra, avvertirà un brivido freddo lungo la schiena. In seguito si avvedrà della presenza d'uno spirito di fanciulla, che scoprirà chiamarsi Selene.
+
+Inizialmente il mezzelfo non riusciva a vedere il fantasma, ma dopo aver rovistato nella cassa, trovando alcuni cucchiai cifrati, alzando il capo, come la sua compagna, riuscirà a vedere un fantasma grasso sorridente con un boccale di birra di nome Bartolius! Incredulo cade a terra, impaurito, seppur alla fine riesca a mantener la calma.
+
+Selene, con l'aiuto di Neehve, cerca di aiutare a ricordare alcuni particolari della sua vita passata, riuscendo a ricordare una filastrocca, che parla di Corvi e Fantasmi.
+
+Intanto , nel suo tendone, il Mastro Ingegnere Grixardo, stava lavorando ad uno dei suoi progetti. Sente qualcuno richiamarlo fa fuori. Irritato prima di aprire, spia da un pertugio da lui costruito, vicino alla porta, chi sia ad avergli rotto le "verdi". I disturbatori serali per il goblin, altri non sono che due dei manovali assieme ad una strana cassa.
+L'ansia e la paura sale nel Mastro, a causa del sopraggiungere di una miriade di corvi, per lui portatori di sventura! Scappano a causa dei corvi i costruttori, lasciando una cassa che Grixardo è intenzionato a non aver tra i piedi. Con un bastone andrà a cercar di scansarla ma senza successo, troppo pesante invero!
+
+Uscirà dal suo tendone, per cercar di spostarla, ma noterà che il coperchio, stava per aprirsi! Un corvo dispettoso, la farà quasi cadere se non fosse che, col suo bastone, invece di cercar di chiuderla, lo farà cadere! Nella caduta, si porta con se una cordicella con una scarsella, dalla quale cascano due monete! L'avidità per l'oro è complice, le prenderà e curioserà dentro, trovandovi attrezzi da lavoro e pergamene!
+
+Le monete, faranno provar la stessa sensazione avvertita da Ilsar e Neehve. Una folata di vento freddo lo investirà ed una voce sentirà nella sua mente. Un terzo spirito ancora non manifesto, infesterà il suo tendone.
+
+Ora sui cieli di Dalsida i corvi neri voleranno d'ora in poi e tre spiriti aleggeranno sulla città, con la promessa di rivedersi.
+
+La Filastrocca
+<br><br>
+" Quando i Corvi giungeranno,
+i fantasmi a Dalsida torneranno,
+il nero volatile nel suo Tempio tornerà,
+ed una nuova regina sorgerà!
+E vita e morte sarà!"
+</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://w0.peakpx.com/wallpaper/864/909/HD-wallpaper-wandering-through-time-romantic-cemetery-crows-angel-firefox-persona-mysterious-trees-woman-goth-moon-ghost-girl-dark-crosses-lady.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 13 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+           di rilievi, lapidi e terreni
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Malias_Grakas | Dalsida | 16° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://img.pikbest.com/wp/202345/dig-shovel-digging-into-dirt-in-the-forest_9577375.jpg!sw800">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Grixardo ha ottenuto un compito speciale da Nefti, trovare il posto giusto per erigere la sua villa nel territorio di Dalsida.
+Un territorio martoriato e difficile, ostico, ma che può regalale grandi soddisfazioni.
+
+Con un gruppo fornito di tutte le personalità utili. Una guardia, Nehevee, Ilras un futuro incantatore e Lykaios uno studioso cultistista si avviano scortati da due guardie elfiche nella zona puntata da Nefti. Dai controlli del terreno Grixardo capisce che deve costruire non troppo vicino alla riva e mentre scava trova una lapide con una strana incisione e una serra sommersa dalla melma e dalla sabbia, ma ancora intera.
+
+Tra leggende, storie e duro lavoro, un primo rilievo e’ stato fatto.
+</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 14 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+          Il battesimo di Morgu
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Elrien | Dalsida | 15° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">
+Grixardo raggiunge la cripta dei cultisti per il battesimo ma non sarà lui a farlo o meglio non solo lui. Quando il pugnale di Lirael affonda nelle sue carni Grix sprofonda in un sonno mortale. Morgu prende il controllo della sua mente e del suo corpo e mentre Grix dorma lui vive la visione al suo posto. Viene posto di fronte ad un pericolo mortale, un creditore di grixardo lo afferra e lo solleva ed è pronto a trafiggerlo. Una scelta d'azione che serve al pontefice, che puo vedere tutto attraverso il libro nero, a valutare e prendere una decisione. Morgu di fronte al pericolo non mostra paura per la morte anzi di fronte alla parola del nemico egli lo definisce un miscredente e accoglie la morte che gli procura ma quando il nemico affonda la lama la fede di Morgu, rivolta agli spiriti della morte ma che shanaas accoglie come signore di tutte le anime, compie il miracolo, la lama annerisce il braccio del nemico annerisce e lo disintegra. Morgu infestando il corpo di Grix si risveglia e 3 sciacalli sono su di lui. Il battesimo non è superato ancora perche egli non fedele a shanaas deve giurare. Giura quindi e lo sciacallo rigira la lama nel suo petto dolorosamente e accoglie il giuramento, un giuramento che non può essere spezzato senza conseguenze! Quindi estrae la lama che diviene lama della pietà e gli viene ceduta. Un messaggio viene recapitato a Lirael da un secondo sciacallo, un messaggio importantissimo che lui coglie tacitamente, un terzo rinnova la benedizione della cripta consacrandola nuovamente al dio e Nefti presente ma in trance viene abbracciata da uno degli sciacalli che la tiene sospesa e forse recapita messaggi, forse la riconduce al padre shanaas, difficile a dirsi visto che poi sviene. Gli sciacalli benedicono il pontefice e la sadagowah poi se ne vanno e il battesimo si conclude.
+</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://www.dndspeak.com/wp-content/uploads/2022/04/25eee032d448a0eec4b745e5a7a56aa8.jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 15 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+           la possesione
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Elrien | Sveg | 14° di Falleak - 21°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://img.freepik.com/premium-photo/spectral-forest-clearing-with-ancient-standing-stones-where-wisps-light-form-into-ghostly-figures-that-dance-moonlight_1252980-39333.jpg?w=360">
+                </td>
+                <td>
+                    <div style="height: 210px; overflow: auto; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">Zaran raduna i goblin per un rito sciamanico di evocazione. Grixardo è li ed è proprio lui il protagonista di questa faccenda, lui e lo spirito di Morgu che lo sta tormentando e seguendo da diverso tempo ormai. Zaran riesce ad evocarlo Morgu sembra ostile e ostinato e cerca di difendersi entrando e possedendo Grix ma viene richiamato e tutto si placa. Viene interrogato, lui vuole stare con grix, vuole che lui lo accolga e ora che è stato evocato per la prima volta non aspetterà una seconda occasione. Grix è sfinito e Zaran vorrebbe un accordo tra i due suggerendo di attendere la prossima luna. Ma averlo riportato offre a morgu la sua occasione. Così spiega di voler aiutare Grixardo colmando le sue lacune, aggiustando la sua mente. Egoisticamente aiuterebbe se stesso aiutando il goblin, non è certo mosso da buoni sentimenti. Ma Zaran non sembra disposto a procedere rendendogli facili le cose, così agisce di sua iniziativa quando capisce che tornerà invisibile a breve. Possiede Grixardo incapace di difendersi e finalmente ottiene ciò che desidera. Avrebbe preferito con le buone ma a mali estremi, estremi rimedi!
+</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- quest 16 -->
+    <div style="background-image: url('https://i.imgur.com/kEFMkmu.png');">
+        <div style="margin: 5px 0px 3px 0px; padding: 0px 10px 0px 10px; font-family: 'Arial', cursive; font-size: 15px; text-align: center; letter-spacing: 5px; line-height: 30px; text-transform: uppercase">
+          Il Mastro della Forgia e il Tridente di Selkara
+        </div>
+    </div>
+    <div style="border: 2px solid #111; padding: 5px">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div style="background-color: #0e0e0e; border-top: 1px solid #111; border-bottom: 1px solid #111; padding-left: 5px; font-size: 13px; letter-spacing: 2px; font-weight: bold; margin-bottom: 3px; text-align: center">
+                        Master Nimloth | Dalsida | 17° di Dublak - 20°Anno
+                    </div>
+                </td>
+            </tr>
+            <tr>
+             <td>
+                   <div style="height: 210px; overflow: auto; direction: rtl; padding: 0px 5px 0px 10px; font-size: 18px; letter-spacing: 1px; margin-bottom: 3px; line-height:22px; text-align: center">
+Grixardo ha deciso di voler imparare il mestiere della forgiatura, per questo si presenta a Mastro Borven Maelrock. Dopo un'attenta valutazione delle armi e armature esposte, il burbero fabbro comincia a fidarsi. Gli regala un taccuino con le basi necessarie per iniziare quell'arte ma, se vorrà lezioni pratiche c'è un prezzo da pagare: o in monete sonanti o...
+
+Borven Maelrock, darà lezioni gratuite solo se il goblin recupererà per lui il Tridente di Selkara, un antico e potente artefatto appartenente alla leggendaria sirena guerriera.
+Il tridente si trova nelle Rovine di Lodelwen. Borven ha bisogno di questo tridente per sfruttarne il potere arcano: la punta del tridente è in grado di fondere metalli indistruttibili, un potere che Borven intende usare per forgiare un'arma eroica e compiacere Valekun. Tuttavia, l'uso del tridente è rischioso, in quanto il suo potere potrebbe risvegliare la vendetta di Selkara e attirare il suo rancore.
+
+C'è però qualcosa che il Mastro non ha detto a Grixardo e di cui solo le Sirene sono a consocenza...
+</div>
+              </td>
+                <td width="1%">
+                    <img style="object-fit: cover; width: 200px; height: 200px; padding: 2px; border: 4px solid #090909; filter: grayscale(50%) brightness(40%);" src="https://media.istockphoto.com/id/462159641/photo/trident-on-a-dramatic-background.jpg?s=612x612&w=0&k=20&c=NZ79UJQzaJshtseKur_-KQ9HsOcqw-3MMdV3kc8ac3I=">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+  <!-- FINE BOX -->  
+           
+</div>
